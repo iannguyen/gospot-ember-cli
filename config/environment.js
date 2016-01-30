@@ -44,6 +44,9 @@ module.exports = function(environment) {
   }
 
   ENV['ember-simple-auth'] = {
+    serverTokenEndpoint:  'http://gospot-back.herokuapp.com/users/sign_in',
+    resourceName:         'users',
+    crossOriginWhitelist: ['http://gospot-backend.herokuapp.com/'],
     routeAfterAuthentication: 'matches',
     routeIfAlreadyAuthenticated: 'matches'
   };
