@@ -44,6 +44,10 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
+  if (environment === 'deploying') {
+    ENV.APP.API_HOST = 'https://gospot-back.herokuapp.com/';
+  }
+
   if (environment === 'production') {
     ENV['ember-simple-auth'] = {
       serverTokenEndpoint:  'https://gospot-back.herokuapp.com/users/sign_in',
@@ -52,7 +56,7 @@ module.exports = function(environment) {
       routeAfterAuthentication: 'matches',
       routeIfAlreadyAuthenticated: 'matches'
     };
-    ENV.APP.API_HOST = 'https://gospot-backend.herokuapp.com/';
+    ENV.APP.API_HOST = 'https://gospot-back.herokuapp.com/';
   }
   return ENV;
 };
