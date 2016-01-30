@@ -31,13 +31,6 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
-  ENV['ember-simple-auth'] = {
-    serverTokenEndpoint:  'https://gospot-back.herokuapp.com/users/sign_in',
-    resourceName:         'users',
-    crossOriginWhitelist: ['https://gospot-backend.herokuapp.com/'],
-    routeAfterAuthentication: 'matches',
-    routeIfAlreadyAuthenticated: 'matches'
-  };
 
   if (environment === 'test') {
     // Testem prefers this...
@@ -52,7 +45,14 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV['ember-simple-auth'] = {
+      serverTokenEndpoint:  'https://gospot-back.herokuapp.com/users/sign_in',
+      resourceName:         'users',
+      crossOriginWhitelist: ['https://gospot-backend.herokuapp.com/'],
+      routeAfterAuthentication: 'matches',
+      routeIfAlreadyAuthenticated: 'matches'
+    };
+    ENV.APP.API_HOST = 'https://gospot-backend.herokuapp.com/';
   }
   return ENV;
 };
