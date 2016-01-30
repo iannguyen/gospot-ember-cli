@@ -31,6 +31,14 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
+  ENV['ember-simple-auth'] = {
+    serverTokenEndpoint:  'https://gospot-back.herokuapp.com/users/sign_in',
+    resourceName:         'users',
+    crossOriginWhitelist: ['https://gospot-backend.herokuapp.com/'],
+    routeAfterAuthentication: 'matches',
+    routeIfAlreadyAuthenticated: 'matches'
+  };
+
   if (environment === 'test') {
     // Testem prefers this...
     ENV.baseURL = '/';
@@ -42,14 +50,6 @@ module.exports = function(environment) {
 
     ENV.APP.rootElement = '#ember-testing';
   }
-
-  ENV['ember-simple-auth'] = {
-    serverTokenEndpoint:  'http://gospot-back.herokuapp.com/users/sign_in',
-    resourceName:         'users',
-    crossOriginWhitelist: ['http://gospot-backend.herokuapp.com/'],
-    routeAfterAuthentication: 'matches',
-    routeIfAlreadyAuthenticated: 'matches'
-  };
 
   if (environment === 'production') {
 
