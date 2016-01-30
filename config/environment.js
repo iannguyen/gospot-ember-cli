@@ -6,7 +6,6 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
-    adapterURL: 'https://gospot-backend.herokuapp.com/',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -24,6 +23,11 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['ember-simple-auth'] = {
+    routeAfterAuthentication: 'matches',
+    routeIfAlreadyAuthenticated: 'matches'
+  };
+  
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -31,7 +35,6 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
-
 
   if (environment === 'test') {
     // Testem prefers this...
@@ -45,19 +48,9 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
-  if (environment === 'deploying') {
-    ENV.APP.API_HOST = 'https://gospot-back.herokuapp.com/';
-  }
 
   if (environment === 'production') {
-    ENV['ember-simple-auth'] = {
-      serverTokenEndpoint:  'https://gospot-back.herokuapp.com/users/sign_in',
-      resourceName:         'users',
-      crossOriginWhitelist: ['https://gospot-backend.herokuapp.com/'],
-      routeAfterAuthentication: 'matches',
-      routeIfAlreadyAuthenticated: 'matches'
-    };
-    ENV.APP.API_HOST = 'https://gospot-back.herokuapp.com/';
+
   }
   return ENV;
 };
