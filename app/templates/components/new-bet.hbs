@@ -1,0 +1,20 @@
+<h3 class="price">${{totalValue}}</h3>
+{{#if ready}}
+  <button {{action "submitBet"}}>Submit Bet</button>
+{{/if}}
+<div class="errors">{{message}}</div>
+
+<div class="placed-bets">
+  <h3>Placed Bets</h3>
+    <ul>
+      {{#each placedBets as |skin|}}
+        <li>{{skin-item skin=skin}}</li>
+      {{/each}}
+    </ul>
+</div>
+
+{{#inventory-section class="bet-inventory" }}
+  {{#each inventory as |skin|}}
+    <li>{{skin-item skin=skin betting=true placeBet="placeBet"}}</li>
+  {{/each}}
+{{/inventory-section}}

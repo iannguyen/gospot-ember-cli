@@ -1,0 +1,17 @@
+{{#if errorMessage}}
+  <div class="errors">{{errorMessage}}</div>
+{{/if}}
+
+<form {{action "authenticate" on="submit"}}>
+
+    <label for="identification">
+      {{input value=identification placeholder="Email Address"}}
+    </label>
+
+    <label for="password">
+      {{input value=password type="password" placeholder="Password"}}
+    </label>
+
+    <button type="submit">Let Me Back In</button>
+
+</form>

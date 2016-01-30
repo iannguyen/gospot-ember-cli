@@ -1,0 +1,13 @@
+<div class="session">
+  {{#if session.isAuthenticated}}
+    <div>
+      {{#link-to 'profile'}}{{session.currentUser.email}}{{/link-to}}
+      <button {{action "logout"}}>Logout</button>
+    </div>
+  {{else}}
+    {{#link-to "login"}}Login{{/link-to}} or
+    {{#link-to "register"}}Register{{/link-to}}
+  {{/if}}
+</div>
+
+{{outlet}}

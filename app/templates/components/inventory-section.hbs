@@ -1,0 +1,16 @@
+<div class="inventory">
+
+  <h3>Inventory</h3>
+
+  {{#if hasPayout}}
+    <h4>You have won <span class="price">${{totalWinnings}}</span>!</h4>
+    <button {{action "destroyPayouts"}}>Got it chief</button>
+  {{/if}}
+
+    <ul>
+
+      {{yield}}
+
+    </ul>
+
+</div>

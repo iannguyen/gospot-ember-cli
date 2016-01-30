@@ -1,0 +1,21 @@
+{{#if errorMessage}}
+<div class="errors">{{errorMessage}}</div>
+{{/if}}
+
+<form {{action "createUser" on="submit"}}>
+
+    <label for="email">
+      {{input value=email placeholder="Email Address"}}
+    </label>
+
+    <label for="password">
+      {{input value=password type="password" placeholder="Password"}}
+    </label>
+
+    <label for="confirmation">
+      {{input value=password_confirmation type="password" placeholder="One more Time"}}
+    </label>
+
+    <button type="submit">I'm New and GN4</button>
+
+</form>

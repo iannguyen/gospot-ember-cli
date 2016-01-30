@@ -1,0 +1,21 @@
+{{outlet}}
+
+<div class="match-bets">
+
+  <ul class="bets-list">
+    {{#each model.bets as |bet|}}
+      <li class="bet-item">
+        {{#bet-main bet=bet}}
+
+          <ul>
+            {{#each bet.skins as |skin|}}
+              <li>{{skin-item skin=skin}}</li>
+            {{/each}}
+          </ul>
+
+        {{/bet-main}}
+      </li>
+    {{/each}}
+  </ul>
+
+</div>

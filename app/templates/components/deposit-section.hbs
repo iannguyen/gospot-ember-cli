@@ -1,0 +1,11 @@
+<div class="deposit">
+
+  <h3>Deposit</h3>
+
+    <ul>
+      {{#each defaultSkins as |skin|}}
+        <li>{{skin-item skin=skin depositSkin="depositSkin" depositting=true}}</li>
+      {{/each}}
+    </ul>
+
+</div>

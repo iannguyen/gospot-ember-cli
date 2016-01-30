@@ -1,0 +1,20 @@
+<div class="{{status}}">
+
+  <ul class="skin-stats">
+    <li>
+      {{skin.name}}<br>
+      <span class="price">${{skin.price}}</span><br>
+
+      {{#if betting}}
+        <button class="bet-button" {{action "placeBet"}}>Bet</button>
+      {{else if depositting}}
+        <button class="deposit-button" {{action "depositSkin"}}>Deposit</button>
+      {{else if withdrawing}}
+        <button class="withdraw-button" {{action "withdrawSkin"}}>Withdraw</button>
+      {{/if}}
+
+    </li>
+  </ul>
+
+
+</div>

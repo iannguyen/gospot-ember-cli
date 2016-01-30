@@ -1,0 +1,15 @@
+<div class="profile">
+
+  <h1>Profile</h1>
+
+    {{#link-to 'matches'}}&lt;&lt;Back to Matches{{/link-to}}
+
+    {{deposit-section depositSkin="depositSkin"}}
+
+    {{#inventory-section payouts=model.payouts destroyPayouts="destroyPayouts" class="profile-inventory"}}
+        {{#each model.skins as |skin|}}
+          <li>{{skin-item withdrawing=true skin=skin won=skin.payout_id withdrawSkin="withdrawSkin"}}</li>
+        {{/each}}
+    {{/inventory-section}}
+
+</div>

@@ -1,0 +1,35 @@
+<div class="match-main">
+
+  <div id="left" class={{if team1Selected 'selected'}} {{action "selectTeam1" match.team_1}}>
+    <h3>{{match.team_1.name}}</h3>
+
+    <h1>{{team1Odds}}%</h1>
+  </div>
+
+  <div id="right" class={{if team2Selected 'selected'}} {{action "selectTeam2" match.team_2}}>
+    <h3>{{match.team_2.name}}</h3>
+
+    <h1>{{team2Odds}}%</h1>
+  </div>
+
+  <div class="score">
+    {{#if notification}}
+      <h5>{{notification}}</h5>
+    {{/if}}
+    <h3>{{matchMessage}}</h3>
+    <h1>{{match.team_1_score}} : {{match.team_2_score}}</h1>
+    <h4>{{match.location}}</h4>
+
+    {{#if bettable}}
+      <div>{{errors}}</div>
+    {{/if}}
+
+      <br>
+
+    {{#link-to "matches.bets" match}}View Bets{{/link-to}}
+
+  </div>
+
+</div>
+
+  {{yield}}
