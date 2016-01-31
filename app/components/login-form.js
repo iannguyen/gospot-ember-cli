@@ -13,12 +13,5 @@ export default Ember.Component.extend({
           this.set('errorMessage', reason.error);
       });
     }
-    // authenticate: function() {
-    //   let options = this.getProperties('email', 'password');
-    //   this.get('session').authenticate('authenticator:devise',
-    //     options).catch((reason) => {
-    //       this.set('errorMessage', reason.error);
-    //   });
-    // }
   }
 });
