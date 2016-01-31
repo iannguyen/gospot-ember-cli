@@ -12,7 +12,7 @@ export default Ember.Component.extend({
 
       Ember.$.ajax({
         method: "post",
-        url: "http://localhost:3000/users",
+        url: "/users",
         data: { user: data },
         }).then(() => {
             _this.get('session').authenticate('authenticator:devise',
