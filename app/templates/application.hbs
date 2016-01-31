@@ -1,7 +1,7 @@
 <div class="session">
   {{#if session.isAuthenticated}}
     <div>
-      {{#link-to 'profile'}}{{session.currentUser.email}}{{/link-to}}
+      {{#link-to 'profile'}}{{session.account}}{{/link-to}}
       <button {{action "logout"}}>Logout</button>
     </div>
   {{else}}

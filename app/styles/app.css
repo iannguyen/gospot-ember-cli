@@ -17,19 +17,6 @@ h1 {
   color: darkorange;
 }
 
-.logo-banner {
-  background-color: rgb(45, 45, 45);
-}
-
-.logo {
-  width: 275px;
-}
-
-.logo:hover {
-  cursor: pointer;
-  text-shadow: 1px 1px 3px white;
-}
-
 h2 {
   font-size: 2vw;
 }
@@ -42,6 +29,19 @@ a {
   color: cornflowerblue;
   text-shadow: 1px 1px 1px black;
   font-size: 1vw;
+}
+
+.logo-banner {
+  background-color: rgb(45, 45, 45);
+}
+
+.logo {
+  width: 275px;
+}
+
+.logo:hover {
+  cursor: pointer;
+  text-shadow: 1px 1px 3px white;
 }
 
 body {
@@ -284,6 +284,11 @@ button {
   background-color: rgb(40, 40, 40);
 }
 
+.auth h2 {
+  margin: auto;
+  width: 30%;
+}
+
 .auth form {
   height: 100px;
 }
@@ -296,6 +301,7 @@ button {
 }
 
 .auth button {
+  margin: 10px;
   width:10%;
   height: 45%;
   background-color: cornflowerblue;

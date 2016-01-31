@@ -1,15 +1,16 @@
 import Ember from 'ember';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
-const { service } = Ember.inject;
-
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
-  session: service('session'),
+  session: Ember.inject.service('session'),
 
   model() {
-    let user = this.store.findRecord('user');
-    this.set('user', user);
-    return user;
+    let _this = this;
+    let email = _this.get('session.account');
+    return this.store.queryRecord('user', {email: email}).then((user) => {
+      _this.set('user', user);
+      return user;
+    });
   },
 
   actions: {

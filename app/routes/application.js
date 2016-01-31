@@ -4,11 +4,7 @@ import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mi
 export default Ember.Route.extend(ApplicationRouteMixin, {
   actions: {
     logout() {
-      let _this = this;
-      Ember.$.ajax({
-        method: "delete",
-        url: "/users/sign_out",
-      }).then(() => { _this.get('session').invalidate(); });
+      this.get('session').invalidate();
     }
   }
 });

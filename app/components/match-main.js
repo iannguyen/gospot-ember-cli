@@ -5,7 +5,7 @@ export default Ember.Component.extend({
 
   bettable: {},
 
-  didRender() {
+  willRender() {
     this.userHasBetted();
     this.getMatchState();
   },
@@ -23,14 +23,12 @@ export default Ember.Component.extend({
   },
 
   team1Odds: Ember.computed('match.team_1_odds', function() {
-    let match = this.get('match');
-    let odds = match.get('team_1_odds');
+    let odds = this.get('match.team_1_odds');
     return Math.round(odds * 100);
   }),
 
   team2Odds: Ember.computed('match.team_2_odds', function() {
-    let match = this.get('match');
-    let odds = match.get('team_2_odds');
+    let odds = this.get('match.team_2_odds');
     return Math.round(odds * 100);
   }),
 
@@ -81,7 +79,7 @@ export default Ember.Component.extend({
   },
 
   userHasBetted() {
-    let currentUserId = parseInt(this.get('session').get('currentUser').id);
+    let currentUserId = parseInt(this.get('session.currentUser.id'));
     let bets = this.get('match').get('bets').filterBy('user_id', currentUserId);
     if (bets.length > 0) {
       this.set('betted', true);

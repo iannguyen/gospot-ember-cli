@@ -4,13 +4,15 @@
 
 <form {{action "authenticate" on="submit"}}>
 
-    <label for="identification">
-      {{input value=identification placeholder="Email Address"}}
+    <label for="email">
+      {{input value=email placeholder="Email Address"}}
     </label>
 
     <label for="password">
       {{input value=password type="password" placeholder="Password"}}
     </label>
+
+    <br>
 
     <button type="submit">Let Me Back In</button>
 

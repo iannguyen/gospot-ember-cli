@@ -36,8 +36,12 @@ export default Ember.Component.extend({
     placeBet(skin) {
       let placedBets = this.get('placedBets');
       let inventory = this.get('inventory');
-      placedBets.pushObject(skin);
-      inventory.removeObject(skin);
+      if (placedBets.length < 10) {
+        placedBets.pushObject(skin);
+        inventory.removeObject(skin);
+      } else {
+        this.set('message', "That's enough.");
+      }
     },
     submitBet() {
       let skins = this.get('placedBets');

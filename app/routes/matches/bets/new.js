@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  session: Ember.inject.service('session'),
+
   beforeModel() {
     let team = this.controllerFor('main').get('selectedTeam');
     if (!team) {
@@ -9,7 +11,8 @@ export default Ember.Route.extend({
   },
 
   model() {
-    return this.store.findRecord('user');
+    let email = this.get('session.account');
+    return this.store.queryRecord('user', {email: email});
   },
 
   actions: {

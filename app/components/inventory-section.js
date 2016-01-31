@@ -1,11 +1,7 @@
 import Ember from 'ember';
 
-const {
-  service
-} = Ember.inject;
-
 export default Ember.Component.extend({
-  session: service('session'),
+  session: Ember.inject.service('session'),
 
   willRender() {
     this.checkIfhasWinnings();
@@ -14,7 +10,7 @@ export default Ember.Component.extend({
   checkIfhasWinnings() {
     let payouts = this.get('payouts');
     let sum = 0;
-    if (payouts.get('length') > 0) {
+    if (payouts && payouts.get('length') > 0) {
       payouts.forEach(function(payout) {
         sum += payout.get('total');
       });
