@@ -22,7 +22,7 @@ export default Ember.Controller.extend({
 
       Ember.$.ajax ({
         method: 'post',
-        url: 'api/bets',
+        url: 'https://immense-fjord-25899.herokuapp.com/api/bets',
         data: { bet: railsParams },
         type: 'json',
       }).then(() => {
