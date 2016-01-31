@@ -3,6 +3,7 @@
 html {
   text-shadow: 1px 1px 1px black;
   font-family: 'Ubuntu', sans-serif;
+  background-image: url('csgo_wall3.png');
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -13,22 +14,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 4vw;
+  font-size: 70px;
   color: darkorange;
 }
 
 h2 {
-  font-size: 2vw;
+  font-size: 50px;
 }
 
 h3 {
-  font-size: 1.5vw;
+  font-size: 30px;
 }
 
 a {
   color: cornflowerblue;
   text-shadow: 1px 1px 1px black;
-  font-size: 1vw;
+  font-size: 20px;
 }
 
 .logo-banner {
@@ -47,16 +48,15 @@ a {
 body {
   margin: auto;
   width: 75vw;
-  /*height:100vh;*/
-  background-image: url('csgowall.jpg');
-  box-shadow: 0px 0px 5px darkorange;
+  background-color: rgb(45, 45, 45);
+  box-shadow: 0px 0px 5px cornflowerblue;
 }
 
 button {
   background-color: white;
   border: none;
   border-radius: 3px;
-  font-size: 0.75vw;
+  font-size: 15px;
   margin: 3px;
   cursor: pointer;
 }
@@ -75,7 +75,7 @@ button {
   border: none;
   border-radius: 3px;
   position: relative;
-  font-size: 0.75vw;
+  font-size: 15px;
   color: white;
 }
 
@@ -309,7 +309,7 @@ button {
   border-radius: 3px;
   position: relative;
   bottom: 3px;
-  font-size: 0.75vw;
+  font-size: 15px;
   color: white;
 }
 
