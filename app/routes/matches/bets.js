@@ -7,7 +7,7 @@ export default Ember.Route.extend({
     let matchId = parseInt(transition.match_id);
     Ember.run.later(function() {
       _this.refresh();
-    }, 5000);
+    }, 90000);
     return this.store.queryRecord('match', {id: matchId});
   }
 
