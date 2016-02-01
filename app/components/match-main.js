@@ -5,9 +5,19 @@ export default Ember.Component.extend({
 
   bettable: {},
 
-  willRender() {
+  didRender() {
     this.userHasBetted();
     this.getMatchState();
+  },
+
+  userHasBetted() {
+    let currentUserId = parseInt(this.get('session.currentUser.id'));
+    let bets = this.get('match').get('bets').filterBy('user_id', currentUserId);
+    if (bets.length > 0) {
+      this.set('betted', true);
+    } else {
+      this.set('betted', false);
+    }
   },
 
   getMatchState() {
@@ -57,6 +67,7 @@ export default Ember.Component.extend({
       this.sendAction('showBets', match);
     },
     selectTeam1(team) {
+      this.userHasBetted();
       if (this.get('bettable') && !this.matchStarted()) {
         let match = this.get('match');
         this.set('team1Selected', true);
@@ -67,6 +78,7 @@ export default Ember.Component.extend({
       }
     },
     selectTeam2(team) {
+      this.userHasBetted();
       if (this.get('bettable') && !this.matchStarted()) {
         let match = this.get('match');
         this.set('team2Selected', true);
@@ -75,16 +87,6 @@ export default Ember.Component.extend({
       } else {
         this.set('bettable', false);
       }
-    }
-  },
-
-  userHasBetted() {
-    let currentUserId = parseInt(this.get('session.currentUser.id'));
-    let bets = this.get('match').get('bets').filterBy('user_id', currentUserId);
-    if (bets.length > 0) {
-      this.set('betted', true);
-    } else {
-      this.set('betted', false);
     }
   },
 
