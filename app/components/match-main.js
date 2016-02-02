@@ -66,28 +66,23 @@ export default Ember.Component.extend({
       let match = this.get('match');
       this.sendAction('showBets', match);
     },
-    selectTeam1(team) {
+    
+    selectTeam(team) {
       this.userHasBetted();
-      if (this.get('bettable') && !this.matchStarted()) {
+      if (!this.get('betted') && this.get('bettable') && !this.matchStarted()) {
         let match = this.get('match');
-        this.set('team1Selected', true);
-        this.set('team2Selected', false);
+        if (match.get('team_1') === team) {
+          this.set('team1Selected', true);
+          this.set('team2Selected', false);
+        } else {
+          this.set('team2Selected', true);
+          this.set('team1Selected', false);
+        }
         this.sendAction('teamSelected', team, match);
       } else {
         this.set('bettable', false);
       }
     },
-    selectTeam2(team) {
-      this.userHasBetted();
-      if (this.get('bettable') && !this.matchStarted()) {
-        let match = this.get('match');
-        this.set('team2Selected', true);
-        this.set('team1Selected', false);
-        this.sendAction('teamSelected', team, match);
-      } else {
-        this.set('bettable', false);
-      }
-    }
   },
 
   matchOver() {

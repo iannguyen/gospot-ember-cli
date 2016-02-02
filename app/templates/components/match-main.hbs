@@ -1,12 +1,12 @@
 <div class="match-main">
 
-  <div id="left" class={{if team1Selected 'selected'}} {{action "selectTeam1" match.team_1}}>
+  <div id="left" class={{if team1Selected 'selected'}} {{action "selectTeam" match.team_1}}>
     <h3>{{match.team_1.name}}</h3>
 
     <h1>{{team1Odds}}%</h1>
   </div>
 
-  <div id="right" class={{if team2Selected 'selected'}} {{action "selectTeam2" match.team_2}}>
+  <div id="right" class={{if team2Selected 'selected'}} {{action "selectTeam" match.team_2}}>
     <h3>{{match.team_2.name}}</h3>
 
     <h1>{{team2Odds}}%</h1>
