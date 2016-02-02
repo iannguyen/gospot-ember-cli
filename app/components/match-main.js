@@ -21,14 +21,11 @@ export default Ember.Component.extend({
   },
 
   getMatchState() {
-    if (this.get('betted')) {
+    if (this.get('betted') || this.matchOver() || this.matchStarted()) {
       this.set('bettable', false);
-    }
-    else if (!this.matchStarted()) {
-      this.set('bettable', true);
     }
     else {
-      this.set('bettable', false);
+      this.set('bettable', true);
     }
   },
 
@@ -51,13 +48,16 @@ export default Ember.Component.extend({
 
   bettableObserver: Ember.observer('bettable', function() {
     let started = this.matchStarted();
+    let over = this.matchOver();
 
-    if (!started) {
-      this.set("matchMessage", "8:00PM (PST)");
-    } else if (!this.matchOver()) {
-      this.set("matchMessage", "In Progress");
-    } else {
+    if (over) {
       this.set("matchMessage", "Match Over");
+    }
+    else if (started) {
+      this.set("matchMessage", "In Progress");
+    }
+    else {
+      this.set("matchMessage", "8:00PM (PST)");
     }
   }).observes('bettable').on('init'),
 
