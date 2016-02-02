@@ -12,7 +12,7 @@ export default Ember.Component.extend({
 
       Ember.$.ajax({
         method: "post",
-        url: "https://immense-fjord-25899.herokuapp.com/users",
+        url: "https://api-thegospot.herokuapp.com/users",
         data: { user: data },
         }).then(() => {
             _this.get('session').authenticate('authenticator:devise',

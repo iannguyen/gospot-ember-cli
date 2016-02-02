@@ -4,9 +4,9 @@ import DeviseAuthenticator from 'ember-simple-auth/authenticators/devise';
 const { RSVP, isEmpty, run } = Ember;
 
 export default DeviseAuthenticator.extend({
-  serverTokenEndpoint: 'https://immense-fjord-25899.herokuapp.com/users/sign_in',
+  serverTokenEndpoint: 'https://api-thegospot.herokuapp.com/users/sign_in',
   resourceName: 'users',
-  crossOriginWhitelist: ['https://immense-fjord-25899.herokuapp.com/'],
+  crossOriginWhitelist: ['https://api-thegospot.herokuapp.com/'],
 
   authenticate(email, password) {
     return new RSVP.Promise((resolve, reject) => {
