@@ -8,7 +8,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
   actions: {
     teamSelected(team, match) {
-      this.controllerFor('main').send('teamSelected', team, match);
+      this.controllerFor('bet').send('teamSelected', team, match);
       this.transitionTo('matches.bets.new', match);
     },
     showBets(match) {

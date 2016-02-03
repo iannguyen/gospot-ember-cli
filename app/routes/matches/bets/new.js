@@ -4,7 +4,7 @@ export default Ember.Route.extend({
   session: Ember.inject.service('session'),
 
   beforeModel() {
-    let team = this.controllerFor('main').get('selectedTeam');
+    let team = this.controllerFor('bet').get('selectedTeam');
     if (!team) {
       this.transitionTo('matches');
     }
@@ -17,7 +17,7 @@ export default Ember.Route.extend({
 
   actions: {
     submitBet(skins) {
-      this.controllerFor('main').send('submitBet', skins);
+      this.controllerFor('bet').send('submitBet', skins);
     },
   }
 });
