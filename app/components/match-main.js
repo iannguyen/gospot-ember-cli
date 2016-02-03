@@ -57,7 +57,7 @@ export default Ember.Component.extend({
       this.set("matchMessage", "In Progress");
     }
     else {
-      this.set("matchMessage", "8:00PM (PST)");
+      this.set("matchMessage", this.startTime());
     }
   }).observes('bettable').on('init'),
 
@@ -66,7 +66,7 @@ export default Ember.Component.extend({
       let match = this.get('match');
       this.sendAction('showBets', match);
     },
-    
+
     selectTeam(team) {
       this.userHasBetted();
       if (!this.get('betted') && this.get('bettable') && !this.matchStarted()) {
@@ -112,4 +112,14 @@ export default Ember.Component.extend({
     let pstHours = (utcHours + 24 - 8) % 24;
     return pstHours;
   },
+
+  startTime() {
+    let startHour = this.get('match.start_hour');
+    let period = "AM";
+    if (startHour > 12) {
+      startHour -= 12;
+      period = "PM";
+    }
+    return startHour.toString() + ":00 " + period + " (PST)";
+  }
 });
