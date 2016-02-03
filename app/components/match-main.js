@@ -5,7 +5,7 @@ export default Ember.Component.extend({
 
   bettable: {},
 
-  didRender() {
+  willRender() {
     this.userHasBetted();
     this.getMatchState();
   },

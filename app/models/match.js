@@ -16,5 +16,5 @@ export default DS.Model.extend({
     return this.get('team_2');
   }}),
   teams: DS.hasMany('teams'),
-  bets: DS.hasMany('bet')
+  bets: DS.hasMany('bet', { async: false })
 });

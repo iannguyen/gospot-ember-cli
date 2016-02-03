@@ -1,4 +1,4 @@
-import Ember from 'ember';
+// import Ember from 'ember';
 import DS from 'ember-data';
 import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
 
@@ -7,9 +7,13 @@ export default DS.RESTAdapter.extend(DataAdapterMixin, {
   authorizer: 'authorizer:devise',
   corsWithCredentials: true,
 
-  headers: function() {
-    return {
-      "X-XSRF-TOKEN": decodeURIComponent(Ember.get(document.cookie.match(/XSRF\-TOKEN\=([^;]*)/), "1"))
-    };
-  }.property().volatile(),
+  shouldReloadAll() {
+    return true;
+  },
+
+  // headers: function() {
+  //   return {
+  //     "X-XSRF-TOKEN": decodeURIComponent(Ember.get(document.cookie.match(/XSRF\-TOKEN\=([^;]*)/), "1"))
+  //   };
+  // }.property().volatile(),
 });
