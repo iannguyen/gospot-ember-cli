@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import config from '../config/environment';
 
 export default Ember.Controller.extend({
   session: Ember.inject.service(),
@@ -22,7 +23,7 @@ export default Ember.Controller.extend({
 
       Ember.$.ajax ({
         method: 'post',
-        url: 'https://api-thegospot.herokuapp.com/api/bets',
+        url: config.api.host + '/api/bets',
         data: { bet: railsParams },
         type: 'json',
       }).then(() => {

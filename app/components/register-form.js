@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import config from '../config/environment';
 
 const { service } = Ember.inject;
 
@@ -12,12 +13,12 @@ export default Ember.Component.extend({
 
       Ember.$.ajax({
         method: "post",
-        url: "https://api-thegospot.herokuapp.com/users",
+        url: config.api.host + "/users",
         data: { user: data },
         }).then(() => {
             _this.get('session').authenticate('authenticator:devise',
-              data.email, data.password).catch(() => {
-              _this.set('errorMessage', "Try again.");
+              data.email, data.password).catch((reason) => {
+              _this.set('errorMessage', reason.error);
         });
       });
     }
