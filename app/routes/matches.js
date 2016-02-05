@@ -16,7 +16,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
       this.transitionTo('matches.bets.new', match);
     },
     showBets(match) {
-      this.transitionTo('matches.bets', match);
+      this.transitionTo('matches.bets', parseInt(match.id));
     },
     goHome() {
       this.transitionTo('matches');
