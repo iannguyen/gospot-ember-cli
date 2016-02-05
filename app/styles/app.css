@@ -345,6 +345,7 @@ footer {
 .instructions li {
   color: darkorange;
   list-style-type: none;
+  width: 95%;
 }
 
 .hide-button {
