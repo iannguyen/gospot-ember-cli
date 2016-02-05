@@ -1,6 +1,5 @@
 <h2 class="matches-header">Matches of the Day</h2>
 
 {{#each model as |match|}}
-  {{#match-main match=match teamSelected="teamSelected" showBets="showBets"}}
-  {{/match-main}}
+  {{match-main match=match teamSelected="teamSelected" showBets="showBets"}}
 {{/each}}
