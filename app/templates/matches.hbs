@@ -2,10 +2,4 @@
   <h1 class="logo" {{action "goHome"}}>GoSpot</h1>
 </div>
 
-<h2 class="matches-header">Match of the Day</h2>
-
-{{#each model as |match|}}
-  {{#match-main match=match teamSelected="teamSelected" showBets="showBets"}}
-    {{outlet}}
-  {{/match-main}}
-{{/each}}
+{{outlet}}
