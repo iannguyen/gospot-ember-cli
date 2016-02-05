@@ -10,5 +10,5 @@ export default ApplicationAdapter.extend({
     } else {
       return this._super(modelName, id, snapshot, requestType, query);
     }
-  }
+  },
 });

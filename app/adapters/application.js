@@ -8,7 +8,19 @@ export default DS.RESTAdapter.extend(DataAdapterMixin, {
   authorizer: 'authorizer:devise',
   corsWithCredentials: true,
 
-  shouldReloadAll() {
+  shouldReloadRecord: function(store, snapshot) {
+    return false;
+  },
+
+  shouldReloadAll: function(store, snapshot) {
+    return false;
+  },
+
+  shouldBackgroundReloadRecord: function(store, snapshot) {
     return true;
   },
+
+  shouldBackgroundReloadAll: function(store, snapshot) {
+    return true;
+  }
 });
