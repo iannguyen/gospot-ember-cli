@@ -31,8 +31,8 @@ export default Ember.Component.extend({
       price: 9.51
     },
     {
-      name: "Karambit: Marble Fade",
-      price: 500
+      name: "Desert Eagle: Blaze",
+      price: 16.12
     }
   ]
 });
