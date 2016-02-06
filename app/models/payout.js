@@ -2,6 +2,6 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   user_id: DS.attr('number'),
-  skins: DS.hasMany('skin'),
+  skins: DS.hasMany('skin', {async: false}),
   total: DS.attr('number'),
 });

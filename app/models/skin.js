@@ -5,6 +5,6 @@ export default DS.Model.extend({
   bet_id: DS.attr('number'),
   name: DS.attr('string'),
   price: DS.attr('number'),
-  user: DS.belongsTo('user', {async: true}),
-  bet: DS.belongsTo('bet', {async: true})
+  user: DS.belongsTo('user', {async: false}),
+  bet: DS.belongsTo('bet', {async: false})
 });

@@ -27,7 +27,7 @@ export default Ember.Controller.extend({
         data: { bet: railsParams },
         type: 'json',
       }).then(() => {
-          _this.get('store').queryRecord('match', match.id);
+          _this.get('store').queryRecord('match', {id: match.id});
           _this.transitionToRoute('matches.bets');
       });
     }

@@ -3,7 +3,6 @@ import DS from 'ember-data';
 export default DS.Model.extend({
   start_hour: DS.attr('number'),
   location: DS.attr('string'),
-  open: DS.attr('boolean'),
   total: DS.attr('number'),
   team_1_score: DS.attr('number'),
   team_2_score: DS.attr('number'),
@@ -15,6 +14,6 @@ export default DS.Model.extend({
   team_2: DS.attr({defaultValue: function() {
     return this.get('team_2');
   }}),
-  teams: DS.hasMany('teams'),
-  bets: DS.hasMany('bet', { async: false })
+  teams: DS.hasMany('teams', {async: false}),
+  bets: DS.hasMany('bet', {async: false })
 });
