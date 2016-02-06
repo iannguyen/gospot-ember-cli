@@ -10,6 +10,9 @@ export default Ember.Component.extend({
         email, password).catch((reason) => {
           this.set('errorMessage', reason.error);
       });
+    },
+    guestLogin: function() {
+      this.get('session').authenticate('authenticator:devise', 'guest');
     }
   }
 });

@@ -21,6 +21,9 @@ export default Ember.Component.extend({
               _this.set('errorMessage', reason.error);
         });
       });
+    },
+    guestLogin: function() {
+      this.get('session').authenticate('authenticator:devise', 'guest');
     }
   }
 });
