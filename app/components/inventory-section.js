@@ -15,7 +15,7 @@ export default Ember.Component.extend({
         sum += payout.get('total');
       });
       this.set('hasPayout', true);
-      this.set('totalWinnings', sum);
+      this.set('totalWinnings', Math.round(sum * 100)/100);
     } else {
       this.set('hasPayout', false);
     }
