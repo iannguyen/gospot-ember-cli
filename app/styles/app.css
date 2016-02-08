@@ -1,58 +1,47 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500);
-
 html {
   text-shadow: 1px 1px 1px black;
   font-family: 'Ubuntu', sans-serif;
   background-image: url('csgo_wall3.png');
   background-attachment: fixed;
 }
-
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 1px black;
   padding: 10px;
 }
-
 h1 {
   font-size: 70px;
   color: darkorange;
 }
-
 h2 {
   font-size: 50px;
 }
-
 h3 {
   font-size: 30px;
 }
-
 a {
   color: cornflowerblue;
   text-shadow: 1px 1px 1px black;
   font-size: 20px;
 }
-
 .logo-banner {
   background-color: rgb(45, 45, 45);
 }
-
 .logo {
   width: 275px;
 }
-
 .logo:hover {
   cursor: pointer;
   text-shadow: 1px 1px 3px white;
 }
-
 body {
   margin: auto;
   width: 75vw;
   background-color: rgb(45, 45, 45);
   /*box-shadow: 0px 0px 5px cornflowerblue;*/
 }
-
 button {
   background-color: white;
   border: none;
@@ -61,7 +50,6 @@ button {
   margin: 3px;
   cursor: pointer;
 }
-
 .session {
   float: right;
   display: block;
@@ -69,7 +57,6 @@ button {
   padding: 0.5vw;
   color: darkorange;
 }
-
 .session button {
   height: 45%;
   background-color: cornflowerblue;
@@ -79,52 +66,44 @@ button {
   font-size: 15px;
   color: white;
 }
-
 .session button:hover {
   background-color: salmon;
 }
-
 .match-main {
   background-color: rgb(50, 50, 50);
   text-align: center;
   padding: 1%;
 }
-
 .matches-header {
   background-color: rgb(50, 50, 50);
   text-align: center;
 }
-
 #left {
   float: left;
-  width: 35%;
+  width: 30%;
   z-index: 999;
 }
-
 #left:hover {
+  border: 5px solid tomato;
   cursor: pointer;
 }
-
 #right {
   float: right;
-  width: 35%;
+  width: 30%;
   z-index: 999;
 }
-
 #right:hover {
+  border: 5px solid tomato;
   cursor: pointer;
 }
-
 .selected {
   border: 5px dashed tomato;
 }
-
 .score {
   position: relative;
   margin: auto;
   width: 30%;
 }
-
 .new-bet {
   overflow-y: auto;
   background-color: rgb(40, 40, 40);
@@ -132,57 +111,47 @@ button {
   width: 100%;
   height: 65vh;
 }
-
 .placed-bets {
   float: left;
   width: 50%;
 }
-
 .placed-bets ul {
   margin: 0 auto;
   padding: 0;
 }
-
-.placed-bets ul li{
+.placed-bets ul li {
   display: inline-block;
   list-style-type: none;
 }
-
 .match-bets {
   background-color: rgb(45, 45, 45);
   padding: 1%;
   text-align: center;
   clear: both;
 }
-
 .match-bets ul li {
   list-style-type: none;
   display: inline-block;
 }
-
 .bet-main ul {
   padding: 0;
 }
-
 .bets-list {
   margin: 0 auto;
   text-align: center;
   padding: 0;
   padding-bottom: 10%;
 }
-
 .bet-item {
   width: 33%;
   vertical-align: top;
   display: inline-block;
 }
-
 .profile {
   background-color: rgb(40, 40, 40);
   padding: 1%;
   height: 97vh;
 }
-
 .profile-inventory {
   background-color: rgb(50, 50, 50);
   width: 65%;
@@ -192,7 +161,6 @@ button {
   height: 75%;
   overflow-y: auto;
 }
-
 .inventory {
   text-align: center;
   float: right;
@@ -200,25 +168,21 @@ button {
   width: 100%;
   height: 100%;
 }
-
 .inventory ul {
   margin: 0 auto;
   text-align: center;
   padding: 0;
 }
-
 .inventory li {
   display: inline-block;
   vertical-align: top;
 }
-
 .bet-inventory {
   float: right;
   width: 45%;
   height: 100%;
   overflow-y: auto;
 }
-
 .deposit {
   text-align: center;
   margin-left: 1%;
@@ -226,18 +190,15 @@ button {
   display: block;
   width: 30%;
 }
-
 .deposit ul {
   margin: 0 auto;
   text-align: center;
   padding: 0;
 }
-
-.deposit li{
+.deposit li {
   display: inline-block;
   vertical-align: top;
 }
-
 .skin-item {
   background-color: crimson;
   color: ivory;
@@ -247,7 +208,6 @@ button {
   font-size: 16px;
   border-radius: 3px;
 }
-
 .win-item {
   background-color: darkgreen;
   color: ivory;
@@ -257,20 +217,15 @@ button {
   font-size: 16px;
   border-radius: 3px;
 }
-
-.skin-item ul{
+.skin-item ul {
   margin: 0 auto;
   padding: 0.5vw;
 }
-
 .win-item ul {
   margin: 0 auto;
   padding: 0.5vw;
 }
-
-.skin-stats {
-}
-
+.skin-stats {}
 .bet-button:hover {
   color: cornflowerblue;
 }
@@ -280,31 +235,26 @@ button {
 .withdraw-button:hover {
   color: red;
 }
-
 .auth {
   text-align: center;
   background-color: rgb(40, 40, 40);
 }
-
 .auth h2 {
   margin: auto;
   width: 30%;
 }
-
 .auth form {
   height: 100px;
 }
-
 .auth input {
   width: 25%;
   height: 30%;
   font-size: 20px;
   margin: 0.25vw;
 }
-
 .auth button {
   margin: 10px;
-  width:12%;
+  width: 12%;
   height: 45%;
   background-color: cornflowerblue;
   border: none;
@@ -314,40 +264,33 @@ button {
   font-size: 15px;
   color: white;
 }
-
 .auth button:hover {
   background-color: green;
 }
-
 .errors {
   left: 0;
   right: 0;
   font-size: 18px;
   color: salmon;
 }
-
 .price {
   color: chartreuse;
   font-weight: 900;
 }
-
 footer {
   width: 75vw;
   position: fixed;
   bottom: 0;
   background-color: rgb(45, 45, 45);
 }
-
 .insructions {
   margin: 10px;
 }
-
 .instructions li {
   color: darkorange;
   list-style-type: none;
   width: 95%;
 }
-
 .hide-button {
   float: right;
   position: relative;
@@ -358,11 +301,9 @@ footer {
   font-size: 15px;
   color: white;
 }
-
 .hide-button:hover {
   background-color: salmon;
 }
-
 .show-button {
   float: right;
   position: relative;
@@ -373,7 +314,6 @@ footer {
   font-size: 15px;
   color: white;
 }
-
 .show-button:hover {
   background-color: green;
 }
