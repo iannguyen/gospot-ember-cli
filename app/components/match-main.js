@@ -51,7 +51,6 @@ export default Ember.Component.extend({
   bettableObserver: Ember.observer('bettable', function() {
     let started = this.matchStarted();
     let over = this.matchOver();
-
     if (over) {
       this.set("matchMessage", "Match Over");
     }
@@ -114,6 +113,9 @@ export default Ember.Component.extend({
   getPSTHours() {
     let today = new Date();
     let utcHours = today.getUTCHours();
+    if (today.dst()) {
+      utcHours += 1;
+    }
     let pstHours = (utcHours + 24 - 8) % 24;
     return pstHours;
   },
@@ -128,3 +130,15 @@ export default Ember.Component.extend({
     return startHour.toString() + ":00 " + period + " (PST)";
   }
 });
+
+// DST
+
+Date.prototype.stdTimezoneOffset = function() {
+  var jan = new Date(this.getFullYear(), 0, 1);
+  var jul = new Date(this.getFullYear(), 6, 1);
+  return Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
+};
+
+Date.prototype.dst = function() {
+    return this.getTimezoneOffset() < this.stdTimezoneOffset();
+};
