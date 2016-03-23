@@ -49,7 +49,7 @@ button {
   background-color: white;
   border: none;
   border-radius: 3px;
-  font-size: 15px;
+  font-size: 11px;
   margin: 3px;
   cursor: pointer;
 }
@@ -206,18 +206,18 @@ button {
   background-color: crimson;
   color: ivory;
   margin: 3px;
-  width: 125px;
-  height: 100px;
-  font-size: 16px;
+  width: 90px;
+  height: 75px;
+  font-size: 12px;
   border-radius: 3px;
 }
 .win-item {
   background-color: darkgreen;
   color: ivory;
   margin: 3px;
-  width: 125px;
-  height: 100px;
-  font-size: 16px;
+  width: 90px;
+  /*height: 100px;*/
+  font-size: 12px;
   border-radius: 3px;
 }
 .skin-item ul {
@@ -228,7 +228,11 @@ button {
   margin: 0 auto;
   padding: 0.5vw;
 }
-.skin-stats {}
+.skin-stats {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
 .bet-button:hover {
   color: cornflowerblue;
 }
