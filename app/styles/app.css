@@ -216,7 +216,7 @@ button {
   color: ivory;
   margin: 3px;
   width: 90px;
-  /*height: 100px;*/
+  height: 75px;
   font-size: 12px;
   border-radius: 3px;
 }
